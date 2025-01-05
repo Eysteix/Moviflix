@@ -1,0 +1,193 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration:none;
+}
+
+:root {
+    --bg_color:white;
+    --text_color: black;
+  }
+  
+  ::placeholder{
+    color: #fff;
+  }
+  
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg_color:black;
+    --text_color: white;
+  }
+}
+
+
+
+
+body{
+  background-color:var(--bg_color);
+  color: var(--text_color);
+}
+
+
+header{
+  width:100%;
+  background: #071119;
+  color:white;
+}
+
+header nav{
+  
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  align-items: center;
+}
+
+header nav ul{
+  display: flex;
+  gap: 10px;
+}
+header nav button{
+  padding: 10px;
+  display: none;
+  width: 50px;
+  border: none;
+  background: #5F6AE2;
+  color: #fff;
+  border-radius: 5px;
+}
+
+header nav  h1{
+  padding: 20px;
+}
+header nav h1 span{
+  color: #2A47C5;
+  font-size:2rem;
+  letter-spacing: 2px;
+}
+header nav ul li{
+  padding: 20px;
+  
+  & a{
+  color:white;
+}
+  
+}
+
+.mobile-overlay{
+  display: none;
+  width: 100%;
+  height:100vh;
+  background: #42445AA6;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  transition: 2s ease linear;
+}
+
+.mobile-overlay.active{
+  display: flex;
+}
+
+.mobile-overlay nav{
+  position: absolute;
+  width: 60%;
+  height:100%;
+  background: black;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  padding: 20px;
+  z-index: 120;
+}
+
+.mobile-overlay nav ul{
+    display flex;
+
+    width:90%;
+   
+  flex-direction: column;
+}
+
+.mobile-overlay nav ul li{
+  padding: 20px;
+  transition: 2s ease linear;
+}
+
+.mobile-overlay nav ul li:active{
+  background: #404255;
+    border-radius: 10px;
+
+  
+}
+
+.mobile-overlay nav ul li.active{
+  background: #404255;
+  border-radius: 10px;
+  
+}
+
+.mobile-overlay nav ul li a{
+  display:flex;
+  align-items: center;
+  gap: 20px;
+}
+.mobile-overlay nav ul li a svg{
+  color: #424BC7;
+  fill:blue;
+}
+
+
+main .header-search{
+  width:80%;
+  margin: 10px auto;
+  padding: 10px;
+  background: #14162C;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+main .header-search input{
+  width: 70%;
+  padding: 8px 12px 5px 6px;
+ background: transparent;
+  border: none;
+  outline: none;
+  color :#EBECF2;
+  
+  
+}
+
+main .header-search  svg{
+  color: #E7E7E7;
+}
+
+.imgCards{
+  margin:0 auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.imgCard img{
+  width: 100%;
+  object-fit: cover;
+}
+@media (max-width: 700px) {
+  header nav ul.nav-links{
+  display: none;
+  }
+ .mobile-overlay{
+   display: none;
+ }
+    header nav button{
+  display: block;
+  }
+  
+
+}
